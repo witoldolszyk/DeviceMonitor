@@ -1,0 +1,47 @@
+<div class="login-container flex justify-center items-center min-h-screen bg-gray-100">
+    <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="login-form bg-white p-6 rounded shadow-md w-full max-w-sm space-y-6">
+      <h2 class="text-2xl font-bold text-center mb-4">Log In</h2>
+  
+      <app-input
+        label="Username"
+        placeholder="Enter your username"
+        type="text"
+        formControlName="username"
+        class="w-full"
+      ></app-input>
+  
+      <div class="error-placeholder">
+        @if (errorMessages.username) {
+          <div class="error-message">
+            {{ errorMessages.username }}
+          </div>
+        }
+      </div>
+  
+      <app-input
+        label="Password"
+        placeholder="Enter your password"
+        type="password"
+        formControlName="password"
+        class="w-full"
+      ></app-input>
+  
+      <div class="error-placeholder">
+        @if (errorMessages.password) {
+          <div class="error-message">
+            {{ errorMessages.password }}
+          </div>
+        }
+      </div>
+  
+      <div class="flex justify-end mt-4">
+        <app-button
+          label="Log In"
+          type="primary"
+          (onClick)="handleLogin()"
+          class="w-auto"
+        ></app-button>
+      </div>
+    </form>
+  </div>
+  

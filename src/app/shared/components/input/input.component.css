@@ -1,0 +1,20 @@
+.input-container {
+    @apply flex flex-col space-y-1;
+  }
+  
+  .input-label {
+    @apply text-gray-700 font-semibold;
+  }
+  
+  .input-field {
+    @apply py-2 px-4 bg-gray-100 text-gray-700 border border-gray-300 rounded;
+  }
+  
+  .input-field:hover {
+    @apply bg-gray-200 border-gray-400;
+  }
+  
+  .input-field:focus {
+    @apply outline-none border-purple-500 ring ring-purple-200;
+  }
+  

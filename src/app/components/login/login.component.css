@@ -1,0 +1,30 @@
+.login-container {
+    @apply flex justify-center items-center min-h-screen relative;  
+    background-image: url('../../../assets/container.jpg'); 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-container::before {
+    content: '';
+    @apply absolute inset-0 bg-black opacity-60; 
+    z-index: 0;
+  }
+  
+  .login-form {
+    @apply bg-white p-6 rounded shadow-md w-full max-w-sm space-y-4 relative;
+    z-index: 10;
+  }
+  
+  h2 {
+    @apply text-2xl font-bold text-center mb-4;
+  }
+  
+  .error-message {
+    @apply text-red-500 text-sm mt-1;
+  }
+  
+  .error-placeholder {
+    @apply min-h-[20px];
+  }
+  
