@@ -1,12 +1,24 @@
 <div class="login-container flex justify-center items-center min-h-screen bg-gray-100">
-    <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="login-form bg-white p-6 rounded shadow-md w-full max-w-sm space-y-6">
-      <h2 class="text-2xl font-bold text-center mb-4">Log In</h2>
-  
+  <form (ngSubmit)="handleLogin()" #loginForm="ngForm" class="login-form bg-white p-6 rounded shadow-md w-full max-w-sm space-y-6">
+    <h2 class="text-2xl font-bold text-center mb-4">Log In</h2>
+
+    
+      <div class="error-placeholder">
+      @if (generalErrorMessage) {
+        <div class="error-message">
+          {{ generalErrorMessage }}
+        </div>
+        }
+      </div>
+
       <app-input
         label="Username"
         placeholder="Enter your username"
         type="text"
-        formControlName="username"
+        [(ngModel)]="username"
+        name="username"
+        #usernameField="ngModel"
+        required
         class="w-full"
       ></app-input>
   
@@ -22,7 +34,10 @@
         label="Password"
         placeholder="Enter your password"
         type="password"
-        formControlName="password"
+        [(ngModel)]="password"
+        name="password"
+        #passwordField="ngModel"
+        required
         class="w-full"
       ></app-input>
   
@@ -37,8 +52,8 @@
       <div class="flex justify-end mt-4">
         <app-button
           label="Log In"
-          type="primary"
-          (onClick)="handleLogin()"
+          buttonType="primary"
+          type="submit"
           class="w-auto"
         ></app-button>
       </div>

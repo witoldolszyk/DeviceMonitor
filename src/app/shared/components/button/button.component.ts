@@ -10,8 +10,8 @@ import { Component, ChangeDetectionStrategy, input, output, OutputRef } from '@a
 })
 export class ButtonComponent {
   label = input<string>();
-
-  type = input<'primary' | 'secondary' | 'success' | 'danger' | 'warning'>();
+  type = input<'button' | 'submit' | 'reset'>();
+  buttonType = input<'primary' | 'secondary' | 'success' | 'danger' | 'warning'>();
 
   onClick = output<void>();
 
@@ -20,7 +20,7 @@ export class ButtonComponent {
   }
 
   get buttonClass(): string {
-    switch (this.type()) {
+    switch (this.buttonType()) {
       case 'primary':
         return 'bg-purple-500 hover:bg-purple-700 text-white';
       case 'secondary':
