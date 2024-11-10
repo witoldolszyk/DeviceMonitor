@@ -1,0 +1,15 @@
+.dashboard-container {
+    @apply flex flex-col items-center p-6 min-h-screen bg-gradient-to-br from-gray-100 to-gray-300;
+}
+
+app-status-filter {
+    @apply mb-6 w-full max-w-lg;
+}
+
+app-equipment-list {
+    @apply w-full max-w-lg;
+}
+
+.equipment-list {
+    @apply bg-white p-4 rounded-lg shadow-lg divide-y divide-gray-200;
+}

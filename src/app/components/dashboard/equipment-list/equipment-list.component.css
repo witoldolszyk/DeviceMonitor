@@ -1,0 +1,27 @@
+.equipment-list {
+    @apply space-y-2 list-none p-0;
+}
+
+.equipment-item {
+    @apply flex gap-4 items-center justify-start p-3 bg-white rounded-lg shadow-md transition-shadow hover:shadow-lg cursor-pointer;
+}
+
+.item-id {
+    @apply text-lg text-gray-800 font-semibold;
+}
+
+.status {
+    @apply font-bold text-sm px-3 py-1 rounded-md;
+}
+
+.status-active {
+    @apply text-green-800 bg-green-200;
+}
+
+.status-error {
+    @apply text-red-800 bg-red-200;
+}
+
+.status-inactive {
+    @apply text-yellow-800 bg-yellow-200;
+}

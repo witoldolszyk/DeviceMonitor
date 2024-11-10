@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <app-status-filter (statusChange)="onStatusChange($event)"></app-status-filter>
+    <app-equipment-list 
+    [equipment]="filteredList$ | async" 
+    (equipmentSelected)="onEquipmentSelected($event)">
+    </app-equipment-list>  
+</div>
+  

@@ -1,0 +1,15 @@
+<ul class="equipment-list">
+    @for (item of equipment; track item.id) {
+    <li (click)="selectEquipment(item)" class="equipment-item">
+        <span class="item-id">ID: {{ item.id }}</span>
+        <span>{{ item.name }}</span>
+        <span class="status" [ngClass]="{
+          'status-active': item.status === 'Active',
+          'status-error': item.status === 'Error',
+          'status-inactive': item.status === 'Inactive'
+        }">
+            {{ item.status }}
+        </span>
+    </li>
+    }
+</ul>
