@@ -55,16 +55,18 @@ ng test
  Chosen for its standalone components, signals, and enhanced reactive programming features, supporting efficient change detection and clear separation of concerns.
 
 ### RxJS: 
+
 Used for managing real-time data streams and reactive programming, allowing dynamic responses to data and filter changes.
 
 ### Tailwind CSS: 
+
 Implemented for rapid styling with utility classes, providing a consistent and responsive UI.
 
 ## Architectural Choices
 
 ### Standalone Component Design:
 
-Enhances modularity and flexibility by allowing components to function independently of Angular modules.
+The application uses Angular’s standalone components, enhancing modularity and flexibility. This approach enables components to function independently of Angular modules, making it easier to scale into a modular structure if needed.
 
 ### Reactive State Management: 
 
