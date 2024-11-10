@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component,EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-status-filter',
@@ -11,7 +11,7 @@ export class StatusFilterComponent {
   @Output() statusChange = new EventEmitter<string>();
   
   // Handles status selection changes
-  onStatusSelected(event: Event) {
+  onStatusSelected(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.statusChange.emit(target.value);
   }

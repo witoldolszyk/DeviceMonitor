@@ -14,7 +14,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-  isLoggedIn: boolean = false;
+  isLoggedIn = false;
   username: string = '';
   password: string = '';
   errorMessages: { username?: string; password?: string;} = {};

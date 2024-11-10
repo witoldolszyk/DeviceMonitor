@@ -7,7 +7,7 @@ import { USERS } from '../mocks/user.mock';
   providedIn: 'root'
 })
 export class AuthService {
-  private loggedIn = signal<boolean>(false);
+  public loggedIn = signal<boolean>(sessionStorage.getItem('currentUser') !== null);
   private currentUser = signal<string | null>(null);
 
   constructor() {}
@@ -38,7 +38,6 @@ export class AuthService {
           this.currentUser.set(username);
           sessionStorage.setItem('currentUser', username); 
         }
-
         return isAuthenticated;
       }),
       catchError(error => {
