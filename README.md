@@ -1,27 +1,75 @@
-# DeviceMonitor
+# Equipment Monitoring Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+A front-end application built with Angular 18, simulating an industrial equipment management system. The dashboard allows users to log in, view equipment status, and filter by different states such as Active, Inactive, and Error.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [Testing](#testing)
+- [Design Decisions](#design-decisions)
+- [License](#license)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User Authentication**: Secure login validation using mock data.
+- **Equipment Monitoring**: Displays equipment list with real-time status updates.
+- **Status Filtering**: Filters equipment by various statuses (Active, Inactive, Error).
+- **Reactive Updates**: Implements Angular’s reactive features, including signals and combineLatest with RxJS for handling dynamic data and status changes.
+- **Error Handling**: Displays user-friendly error messages for a smooth user experience.
 
-## Build
+## Setup Instructions
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 1. Clone the Repository
 
-## Running unit tests
+git clone https://github.com/your-repository/equipment-monitoring-dashboard.git
+cd equipment-monitoring-dashboard
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+###  2. Install Dependencies
 
-## Running end-to-end tests
+Make sure you have Node.js and npm installed, then run:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+npm install
 
-## Further help
+###  3. Run the Application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Start the development server with:
+
+ng serve
+In your browser, go to http://localhost:4200 to access the app.
+
+###  4. Navigate to the Application
+
+Open your browser and go to http://localhost:4200.
+
+## Testing
+
+Run unit tests with:
+
+ng test
+
+## Design Decisions
+
+### Angular 18:
+
+ Chosen for its standalone components, signals, and enhanced reactive programming features, supporting efficient change detection and clear separation of concerns.
+
+### RxJS: 
+Used for managing real-time data streams and reactive programming, allowing dynamic responses to data and filter changes.
+
+### Tailwind CSS: 
+Implemented for rapid styling with utility classes, providing a consistent and responsive UI.
+
+## Architectural Choices
+
+### Standalone Component Design:
+
+Enhances modularity and flexibility by allowing components to function independently of Angular modules.
+
+### Reactive State Management: 
+
+Utilizes signals and RxJS observables for efficient state management, ensuring the UI dynamically responds to state changes.
+
+### Error Handling: 
+
+Integrated error handling in services to provide user-friendly messages regarding connectivity or data issues.
