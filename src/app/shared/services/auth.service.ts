@@ -1,6 +1,4 @@
-// src/app/shared/services/auth.service.ts
 import { Injectable, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 import { USERS } from '../mocks/user.mock';
