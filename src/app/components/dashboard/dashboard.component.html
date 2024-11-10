@@ -1,5 +1,10 @@
 <div class="dashboard-container">
     <app-status-filter (statusChange)="onStatusChange($event)"></app-status-filter>
+    @if(errorMessage) {
+    <div class="error-message">
+        {{ errorMessage }}
+    </div>
+    }
     <app-equipment-list 
     [equipment]="filteredList$ | async" 
     (equipmentSelected)="onEquipmentSelected($event)">

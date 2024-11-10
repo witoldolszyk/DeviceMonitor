@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { catchError, delay, map } from 'rxjs/operators';
 import { USERS } from '../mocks/user.mock';
 
 @Injectable({
@@ -36,6 +36,10 @@ export class AuthService {
         }
 
         return isAuthenticated;
+      }),
+      catchError(error => {
+        console.error('Login error:', error);
+        return of(false);
       })
     );
   }
