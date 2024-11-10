@@ -9,6 +9,8 @@ import { Equipment } from '../models/equipment.model';
 export class EquipmentService {
 
   constructor() { }
+  
+  // Retrieves equipment data with a simulated delay
 
   getEquipmentData(): Observable<Equipment[]> {
     return of(EQUIPMENT_DATA).pipe(

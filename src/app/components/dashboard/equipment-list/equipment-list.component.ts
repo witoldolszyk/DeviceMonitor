@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, output, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output } from '@angular/core';
 import { Equipment } from '../../../shared/models/equipment.model';
 import { NgClass } from '@angular/common';
 
@@ -14,7 +14,7 @@ export class EquipmentListComponent {
   @Input() equipment: Equipment[] | null = []; 
   @Output() equipmentSelected = new EventEmitter<Equipment>(); 
 
- 
+  // Emits the selected equipment item
   selectEquipment(equipment: Equipment) {
     this.equipmentSelected.emit(equipment);
   }

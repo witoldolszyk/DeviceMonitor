@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
   constructor(private equipmentService: EquipmentService) {}
 
   ngOnInit(): void {
+    // Fetches equipment data and handles potential errors
     this.equipmentList$ = this.equipmentService.getEquipmentData().pipe(
       catchError(error => {
         this.errorMessage = 'Failed to load equipment data. Please try again later.';
@@ -33,6 +34,7 @@ export class DashboardComponent implements OnInit {
       })
     );
 
+    // Applies status filter to equipment list and manages errors in filtering
     this.filteredList$ = combineLatest([this.equipmentList$, this.statusFilter$]).pipe(
       map(([equipmentList, selectedStatus]) =>
         selectedStatus
@@ -47,10 +49,12 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  // Updates filter value based on user input
   onStatusChange(status: string): void {
     this.statusFilter$.next(status);
   }
 
+  // Logs the selected equipment item when a user clicks or selects an equipment entry.
   onEquipmentSelected(selectedEquipment: Equipment): void {
     console.log('Selected Equipment:', selectedEquipment);
   }

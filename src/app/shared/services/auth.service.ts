@@ -10,7 +10,9 @@ export class AuthService {
   private loggedIn = signal<boolean>(false);
   private currentUser = signal<string | null>(null);
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     const savedUser = sessionStorage.getItem('currentUser');
     if (savedUser) {
       this.loggedIn.set(true);
@@ -18,10 +20,12 @@ export class AuthService {
     }
   }
 
+  // Returns login status
   get isLoggedIn() {
     return this.loggedIn();
   }
 
+  // Logs in a user and updates the login status and current user
   login(username: string, password: string): Observable<boolean> {
     return of(USERS).pipe(
       delay(500),
@@ -43,7 +47,8 @@ export class AuthService {
       })
     );
   }
-
+ 
+  // Logs out the user, clears session, and updates status
   logout(): void {
     this.loggedIn.set(false);
     this.currentUser.set(null);

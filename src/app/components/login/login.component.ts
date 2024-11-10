@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { FormsModule } from '@angular/forms';
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn;
   }
 
+  // Handles login logic
   handleLogin(): void {
     this.clearErrorMessages();
 
@@ -53,11 +54,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // Clears all error messages
   private clearErrorMessages(): void {
     this.errorMessages = {};
     this.generalErrorMessage = '';
   }
 
+  // Sets specific error messages for username and password
   private setErrorMessages(): void {
     if (!this.username) {
       this.errorMessages.username = 'Username is required.';
@@ -67,6 +70,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // Validates if form has required fields
   private isFormValid(): boolean {
     return !!this.username && !!this.password;
   }

@@ -11,6 +11,7 @@ export class AuthGuard implements CanActivate {
     private router: Router
   ) {}
 
+  // Allows route activation if the user is logged in; otherwise, redirects to the login page
   canActivate(): boolean | UrlTree {
     if (this.authService.isLoggedIn) {
       return true;
