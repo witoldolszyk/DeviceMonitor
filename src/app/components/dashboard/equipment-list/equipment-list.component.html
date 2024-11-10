@@ -1,3 +1,4 @@
+@if(equipment) {
 <ul class="equipment-list">
     @for (item of equipment; track item.id) {
     <li (click)="selectEquipment(item)" class="equipment-item">
@@ -13,3 +14,6 @@
     </li>
     }
 </ul>
+} @else {
+<div>Loading...</div>
+}

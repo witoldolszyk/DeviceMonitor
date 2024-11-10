@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,8 @@ import { ButtonComponent } from '../../shared/components/button/button.component
   styleUrls: ['./login.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  isLoggedIn = false;
   username: string = '';
   password: string = '';
   errorMessages: { username?: string; password?: string;} = {};
@@ -24,6 +25,10 @@ export class LoginComponent {
     private router: Router,
     private cdr: ChangeDetectorRef 
   ) {}
+
+  ngOnInit() {
+    this.isLoggedIn = this.authService.isLoggedIn;
+  }
 
   handleLogin(): void {
     this.clearErrorMessages();
@@ -64,5 +69,14 @@ export class LoginComponent {
 
   private isFormValid(): boolean {
     return !!this.username && !!this.password;
+  }
+
+  goToDashboard(): void {
+    this.router.navigate(['/dashboard']);
+  }
+
+  handleLogout(): void {
+    this.authService.logout();
+    this.isLoggedIn = false;
   }
 }
