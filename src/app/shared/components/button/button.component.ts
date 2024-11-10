@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, ChangeDetectionStrategy, input, output, OutputRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
