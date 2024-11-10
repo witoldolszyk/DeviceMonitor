@@ -24,7 +24,7 @@ A front-end application built with Angular 18, simulating an industrial equipmen
 
 git clone https://github.com/witoldolszyk/DeviceMonitor.git
 
-cd DeviceMonitor
+cd DeviceMonitor-main
 
 ###  2. Install Dependencies
 
