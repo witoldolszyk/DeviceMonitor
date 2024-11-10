@@ -22,7 +22,7 @@ A front-end application built with Angular 18, simulating an industrial equipmen
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-repository/equipment-monitoring-dashboard.git
+git clone https://github.com/witoldolszyk/DeviceMonitor.git
 cd equipment-monitoring-dashboard
 
 ###  2. Install Dependencies
