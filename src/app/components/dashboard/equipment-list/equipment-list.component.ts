@@ -15,7 +15,7 @@ export class EquipmentListComponent {
   @Output() equipmentSelected = new EventEmitter<Equipment>(); 
 
   // Emits the selected equipment item
-  selectEquipment(equipment: Equipment) {
+  selectEquipment(equipment: Equipment): void {
     this.equipmentSelected.emit(equipment);
   }
 }

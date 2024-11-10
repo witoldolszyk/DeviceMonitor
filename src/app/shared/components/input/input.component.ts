@@ -22,7 +22,7 @@ export class InputComponent implements ControlValueAccessor, OnInit {
   type = input<'text' | 'password' | 'email'>('text');
 
   value: string = '';
-  disabled = false;
+  disabled: boolean = false;
 
   onChange: (value: string) => void = () => {};
   onTouched: () => void = () => {};

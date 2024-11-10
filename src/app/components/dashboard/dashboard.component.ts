@@ -25,7 +25,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 })
 
 export class DashboardComponent implements OnInit {
-  private statusFilter$ = new BehaviorSubject<string>(''); 
+  private statusFilter$: BehaviorSubject<string> = new BehaviorSubject<string>(''); 
   equipmentList$!: Observable<Equipment[]>; 
   filteredList$!: Observable<Equipment[]>; 
   errorMessage: string | null = null;
