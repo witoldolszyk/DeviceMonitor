@@ -1,0 +1,7 @@
+.header-container {
+    @apply bg-gray-800 text-white shadow-md p-4 flex items-center justify-between
+}
+
+.header-title {
+    @apply text-xl font-bold;
+}

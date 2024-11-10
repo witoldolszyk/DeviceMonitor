@@ -1,0 +1,8 @@
+.footer-container {
+    @apply bg-gray-800 text-center py-4 mt-0 w-full; 
+    @apply border-t-2 border-gray-700; 
+  }
+  
+  .footer-text {
+    @apply text-sm text-white;
+  }
