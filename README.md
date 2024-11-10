@@ -23,7 +23,7 @@ A front-end application built with Angular 18, simulating an industrial equipmen
 ### 1. Clone the Repository
 
 git clone https://github.com/witoldolszyk/DeviceMonitor.git
-cd equipment-monitoring-dashboard
+cd DeviceMonitor
 
 ###  2. Install Dependencies
 
@@ -45,7 +45,9 @@ Open your browser and go to http://localhost:4200.
 Credentials to log in:
 
 username: 'user1', password: 'password1'
+
 username: 'user2', password: 'password2'
+
 username: 'admin', password: 'admin123' 
 
 ## Testing
