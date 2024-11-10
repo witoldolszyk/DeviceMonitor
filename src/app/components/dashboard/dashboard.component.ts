@@ -6,11 +6,19 @@ import { catchError, map } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { EquipmentListComponent } from './equipment-list/equipment-list.component';
 import { StatusFilterComponent } from './status-filter/status-filter.component';
+import { HeaderComponent } from '../../shared/components/header/header.component';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, EquipmentListComponent, StatusFilterComponent],
+  imports: [
+    CommonModule, 
+    EquipmentListComponent, 
+    StatusFilterComponent, 
+    HeaderComponent, 
+    FooterComponent
+  ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
